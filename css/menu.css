@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+    /* Definição de cores para facilitar a manutenção */
+    --cor-azul-escuro: #0022ff; /* Tom de azul semelhante ao do seu login */
+    --cor-fundo-claro: #f0f0f0; /* Fundo cinza claro */
+    --cor-texto-claro: #ffffff;
+    --cor-texto-escuro: #333333;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--cor-fundo-claro);
+    color: var(--cor-texto-escuro);
+}
+
+/* 1. CABEÇALHO SUPERIOR */
+.cabecalho-superior {
+    background-color: var(--cor-azul-escuro);
+    color: var(--cor-texto-claro);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    /* Adiciona uma pequena sombra para destacar */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+.nome-sistema {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.menu-principal a {
+    color: var(--cor-texto-claro);
+    text-decoration: none;
+    font-size: 14px;
+    padding: 0 10px; /* Espaçamento entre os links */
+}
+
+.menu-principal a:hover {
+    text-decoration: underline;
+}
+
+/* 2. CONTEÚDO CENTRAL */
+.conteudo-principal {
+    flex-grow: 1; /* Faz com que ocupe o espaço restante */
+    padding: 30px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.saudacao {
+    align-self: flex-start; /* Alinha o "Bem-vindo!" no canto superior esquerdo */
+    margin-bottom: 50px;
+    font-size: 16px;
+    color: var(--cor-texto-escuro);
+}
+
+.area-eventos {
+    text-align: center;
+    width: 100%;
+    max-width: 600px; /* Limita a largura do bloco central */
+    padding-top: 50px; /* Empurra o conteúdo para baixo, como na imagem */
+}
+
+.titulo-eventos {
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: var(--cor-texto-escuro);
+    margin-bottom: 20px;
+}
+
+.caixa-evento {
+    padding: 15px 30px;
+    background-color: white; /* Fundo branco para a caixa de evento */
+    border-radius: 20px;
+    /* Imita o efeito de "blur" ou sombra interna da sua imagem */
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05); 
+    color: #999;
+}
+
+/* 3. RODAPÉ INFERIOR */
+.rodape-inferior {
+    background-color: var(--cor-azul-escuro);
+    color: var(--cor-texto-claro);
+    padding: 10px 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size: 12px;
+}
+
+.informacao-institucional {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.icone-rodape {
+    font-size: 16px;
+    color: var(--cor-texto-claro);
+    /* Se você usar ícones de verdade (como FontAwesome), eles serão mais fiéis */
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diário Inteligente - Eventos</title>
+    <link rel="stylesheet" href="css/eventos.css">
+</head>
+<body id="tela-eventos">
+    
+    <header class="cabecalho-superior">
+        <div class="nome-sistema">Diário Inteligente</div>
+        <nav class="menu-principal">
+            <a href="menu.html">Início</a>
+            <a href="calendario.html">Calendário</a>
+            <a href="eventos.html" class="ativo">Eventos</a>
+            <a href="perfil.html">Perfil</a>
+        </nav>
+    </header>
+
+    <main class="conteudo-principal-eventos">
+        <div class="container-central-eventos">
+            
+            <h1>Lista Completa de Eventos</h1>
+            <p class="resumo-eventos" id="resumo-eventos"></p>
+            
+            <section class="lista-eventos" id="lista-eventos">
+                <p class="aviso-carregando">Carregando eventos...</p>
+            </section>
+            
+            <div class="filtros">
+                <label for="filtro-tipo">Filtrar por Tipo:</label>
+                <select id="filtro-tipo">
+                    <option value="todos">Todos</option>
+                    <option value="prova">Prova</option>
+                    <option value="trabalho">Trabalho</option>
+                    <option value="reuniao">Reunião</option>
+                    <option value="lembrete">Lembrete</option>
+                </select>
+                <button id="btn-remover-selecionados" class="btn-perigo">Remover Selecionados</button>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="rodape-inferior">
+        <p>© 2025 Diário Inteligente - Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="eventos.js"></script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --cor-azul-escuro: #1a237e; 
+    --cor-fundo-claro: #eceff1; 
+    --cor-texto-claro: #ffffff;
+    --cor-texto-escuro: #37474f; 
+    --cor-destaque: #448aff;
+    
+    --altura-cabecalho: 7vh; 
+    --altura-rodape: 5vh;
+    --altura-conteudo: 88vh; 
+    
+    --largura-lateral: 20%; /* 20% da largura para a barra lateral */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; 
+    overflow: hidden; /* IMPEDE A ROLAGEM GERAL */
+    background-color: var(--cor-fundo-claro);
+    color: var(--cor-texto-escuro);
+}
+
+/* 1. CABEÇALHO SUPERIOR */
+.cabecalho-superior {
+    background-color: var(--cor-azul-escuro);
+    color: var(--cor-texto-claro);
+    padding: 1.5vh 30px; 
+    height: var(--altura-cabecalho);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); 
+}
+
+.nome-sistema {
+    font-size: 2.2vh; 
+    font-weight: 600; 
+}
+
+.menu-principal a {
+    color: var(--cor-texto-claro);
+    text-decoration: none;
+    font-size: 1.8vh; 
+    padding: 0 12px;
+}
+
+/* 2. CONTEÚDO PRINCIPAL (Área Dividida em Lateral e Calendário) */
+.conteudo-principal {
+    display: flex;
+    height: var(--altura-conteudo);
+    overflow: hidden; /* Garante que a área central não force a rolagem */
+    flex-grow: 1;
+}
+
+/* BARRA LATERAL ESQUERDA */
+.barra-lateral {
+    width: var(--largura-lateral);
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8); /* Branco semi-transparente */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+    padding: 2vh 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo-lateral {
+    font-size: 2vh;
+    margin-bottom: 2vh;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.5vh;
+}
+
+.grupo-filtro {
+    margin-bottom: 1.5vh;
+    font-size: 1.5vh;
+}
+
+.grupo-filtro label {
+    display: block;
+    font-weight: 600;
+    color: #555;
+}
+
+.grupo-filtro input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #aaa;
+    background: transparent;
+    padding: 0.5vh 0;
+    outline: none;
+    font-size: 1.5vh;
+}
+
+.btn-acao-lateral {
+    width: 100%;
+    padding: 1vh;
+    background-color: #e0e0e0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.5vh;
+    margin-top: 2vh;
+    cursor: pointer;
+}
+
+.icone-animado-lateral {
+    margin-top: auto; /* Empurra para o rodapé da barra lateral */
+    text-align: center;
+    font-size: 4vh;
+    color: var(--cor-azul-escuro);
+}
+
+/* ÁREA DO CALENDÁRIO */
+.area-calendario {
+    width: 80%; /* Ocupa o restante da largura */
+    padding: 2vh 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo-planejamento {
+    font-size: 3vh;
+    font-weight: 300;
+    margin-bottom: 1vh;
+    color: #555;
+    text-align: center;
+}
+
+.mes-atual {
+    font-weight: 600;
+}
+
+.grade-calendario {
+    display: grid;
+    /* 7 colunas de largura igual */
+    grid-template-columns: repeat(7, 1fr); 
+    /* Ocupa o restante da altura do container */
+    flex-grow: 1; 
+    gap: 1px; /* Espaço sutil entre as células */
+    background-color: #ddd; /* Cor das linhas da grade */
+}
+
+.dia-semana {
+    background-color: #f0f0f0;
+    color: var(--cor-texto-escuro);
+    text-align: center;
+    font-size: 1.5vh;
+    padding: 0.8vh 0;
+    font-weight: bold;
+}
+
+.celula-dia {
+    background-color: white;
+    /* Altura da célula é determinada pela altura do grid */
+    min-height: 8vh; 
+    border: 1px solid #eee;
+    padding: 0.5vh;
+    position: relative;
+}
+
+.checkbox-dia {
+    /* Estilizando o círculo que aparece no canto da célula */
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 1.5vh;
+    height: 1.5vh;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    background-color: transparent;
+}
+
+
+/* 3. RODAPÉ INFERIOR */
+.rodape-inferior {
+    background-color: var(--cor-azul-escuro);
+    color: var(--cor-texto-claro);
+    padding: 1vh 30px;
+    height: var(--altura-rodape);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 1.5vh;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0; 
+}
+
+.informacao-institucional {
+    letter-spacing: 0.5px;
+}

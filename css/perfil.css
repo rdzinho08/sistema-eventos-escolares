@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Usando unidade relativa 'em' ou 'vh' para fontes para melhor ajuste */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
+
+:root {
+    --cor-azul-escuro: #1a237e;
+    --cor-fundo-claro: #eceff1;
+    --cor-texto-claro: #ffffff;
+    --cor-texto-escuro: #37474f;
+    --cor-destaque: #448aff;
+    
+    /* Altura que o cabeçalho e rodapé ocuparão */
+    --altura-cabecalho: 7vh; 
+    --altura-rodape: 5vh;
+    
+    /* O CONTEÚDO PRINCIPAL vai ocupar o restante: 100vh - 7vh - 5vh = 88vh */
+    --altura-conteudo: 88vh; 
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    /* Garante a altura total da tela */
+    height: 100vh; 
+    
+    /* IMPEDE TODA A ROLAGEM, forçando o conteúdo a caber */
+    overflow: hidden; 
+    
+    background-color: var(--cor-fundo-claro);
+    color: var(--cor-texto-escuro);
+}
+
+/* 1. CABEÇALHO SUPERIOR (Altura Fixa) */
+.cabecalho-superior {
+    background-color: var(--cor-azul-escuro);
+    color: var(--cor-texto-claro);
+    /* O padding foi reduzido para otimizar o espaço */
+    padding: 1.5vh 30px; 
+    height: var(--altura-cabecalho);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); 
+    flex-shrink: 0; 
+}
+
+.nome-sistema {
+    font-size: 2.2vh; /* Tamanho da fonte relativo à altura da tela */
+    font-weight: 600; 
+}
+
+.menu-principal a {
+    color: var(--cor-texto-claro);
+    text-decoration: none;
+    font-size: 1.8vh; 
+    padding: 0 12px;
+    transition: color 0.3s;
+}
+
+.menu-principal a:hover {
+    color: var(--cor-destaque);
+}
+
+.icone-perfil {
+    margin-left: 15px;
+    font-size: 2.5vh;
+}
+
+/* 2. CONTEÚDO PRINCIPAL (Área de Exibição Total) */
+.conteudo-principal {
+    flex-grow: 1; 
+    height: var(--altura-conteudo);
+    overflow: hidden; 
+    
+    /* Layout do conteúdo dentro da área principal */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Padding reduzido para liberar espaço */
+    padding: 2vh 15px; 
+}
+
+.card-perfil {
+    background-color: var(--cor-texto-claro);
+    /* Padding ajustado para ser relativo ao viewport */
+    padding: 3vh 30px; 
+    border-radius: 15px;
+    width: 100%;
+    max-width: 450px;
+    /* Garante que o card se ajuste se necessário */
+    max-height: 100%; 
+    overflow: hidden; /* Corta o conteúdo do card se ele for grande demais */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); 
+    text-align: center;
+}
+
+.titulo-perfil {
+    color: var(--cor-azul-escuro);
+    margin-bottom: 2vh;
+    font-weight: 700;
+    font-size: 3vh;
+}
+
+/* FOTO DE PERFIL */
+.area-foto {
+    margin-bottom: 2vh;
+}
+
+.foto-placeholder {
+    /* Dimensões relativas ao viewport */
+    width: 10vh; 
+    height: 10vh;
+    border-radius: 50%;
+    background-color: #cfd8dc; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    font-size: 1.5vh;
+    color: #78909c;
+    border: 5px solid var(--cor-destaque);
+    box-shadow: 0 0 15px rgba(68, 138, 255, 0.5);
+}
+
+/* FORMULÁRIO */
+.formulario-perfil {
+    width: 100%;
+}
+
+.grupo-input {
+    text-align: left;
+    margin-bottom: 1.5vh;
+}
+
+.grupo-input label {
+    display: block;
+    font-size: 1.3vh;
+    color: #9e9e9e;
+    margin-bottom: 0.5vh;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.grupo-input input {
+    width: 100%;
+    padding: 1.2vh 15px;
+    border: 1px solid #cfd8dc;
+    border-radius: 8px;
+    outline: none;
+    font-size: 1.8vh;
+    color: var(--cor-texto-escuro);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.grupo-input input:focus {
+    border-color: var(--cor-destaque);
+    box-shadow: 0 0 0 3px rgba(68, 138, 255, 0.2);
+}
+
+/* BOTÃO */
+.btn-salvar {
+    width: 100%;
+    padding: 1.5vh;
+    background-color: var(--cor-azul-escuro);
+    color: var(--cor-texto-claro);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.8vh;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 1.5vh;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.btn-salvar:hover {
+    background-color: #1a39ac; 
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+/* 3. RODAPÉ INFERIOR (Altura Fixa) */
+.rodape-inferior {
+    background-color: var(--cor-azul-escuro);
+    color: var(--cor-texto-claro);
+    padding: 1vh 30px;
+    height: var(--altura-rodape);
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size: 1.5vh;
+}

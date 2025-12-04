@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    background: #f0f0f0; 
+    overflow: hidden;
+}
+
+/* IMAGEM LATERAL */
+.area-imagem {
+    width: 50%;
+    height: 100vh;
+}
+
+.area-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ÁREA DO FORMULÁRIO */
+.area-formulario {
+    width: 50vw;
+    height: 100vh;
+    background: #0a35ff;
+    padding: 40px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+}
+
+.titulo-formulario {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.icones-sociais {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.icone {
+    width: 35px;
+    height: 35px;
+    background: white;
+    color: #0a35ff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s; 
+}
+
+.icone:hover {
+    transform: scale(1.1);
+}
+
+/* FORMULÁRIO */
+.formulario-cadastro {
+    width: 100%;
+    padding: 0 10px; 
+}
+
+.grupo-input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.grupo-input label {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.grupo-input input {
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); 
+}
+
+.linha {
+    display: flex;
+    gap: 15px;
+}
+
+.metade {
+    width: 100%;
+}
+
+.termos {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 10px 0 20px 0;
+}
+
+.btn-enviar {
+    width: 100%;
+    padding: 12px;
+    background: white;
+    color: #0a35ff;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 10px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.btn-enviar:hover {
+    background: #e0e0e0;
+}
+
+.link-login {
+    display: block;
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: text-decoration 0.2s;
+}
+
+.link-login:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,238 @@
+/* ARQUIVO: css/eventos.css - CSS COMPLETO PARA A TELA DE EVENTOS */
+
+/* --- VARIÁVEIS DE COR E RESET GLOBAL --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --cor-azul-escuro: #1a237e; /* Azul Principal */
+    --cor-fundo-claro: #eceff1; /* Fundo Padrão */
+    --cor-texto-claro: #ffffff;
+    --cor-texto-escuro: #37474f; 
+    --cor-azul-claro-hover: #5c6bc0; /* Um azul mais claro para hover */
+    
+    --altura-cabecalho: 8vh; 
+    --altura-rodape: 5vh;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Usa min-height para acomodar todo o conteúdo */
+    overflow-x: hidden; 
+    background-color: var(--cor-fundo-claro);
+    color: var(--cor-texto-escuro);
+}
+
+/* --- 1. CABEÇALHO (Aparência Aprimorada) --- */
+.cabecalho-superior {
+    background-color: var(--cor-azul-escuro);
+    color: var(--cor-texto-claro);
+    height: var(--altura-cabecalho);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
+    flex-shrink: 0;
+}
+
+.nome-sistema {
+    font-size: 2.5vh; 
+    font-weight: 700; 
+    letter-spacing: 0.5px;
+}
+
+.menu-principal a {
+    color: var(--cor-texto-claro);
+    text-decoration: none;
+    font-size: 1.8vh; 
+    padding: 0 15px;
+    transition: color 0.3s, background-color 0.3s;
+    border-radius: 4px;
+}
+
+.menu-principal a:hover {
+    color: #fff;
+    background-color: var(--cor-azul-claro-hover); /* Efeito suave no hover */
+}
+
+.menu-principal a.ativo {
+    font-weight: bold;
+    border-bottom: 3px solid #ffffff; 
+    padding-bottom: 5px;
+}
+
+/* --- 2. RODAPÉ --- */
+.rodape-inferior {
+    height: var(--altura-rodape);
+    background-color: var(--cor-azul-escuro);
+    color: var(--cor-texto-claro);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-shrink: 0;
+    margin-top: auto;
+    font-size: 1.5vh;
+}
+
+/* --- 3. LAYOUT DA PÁGINA DE EVENTOS --- */
+.conteudo-principal-eventos {
+    flex-grow: 1;
+    padding: 3vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.container-central-eventos {
+    width: 95%;
+    max-width: 1000px; 
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    padding: 3vh 4vh;
+    text-align: center;
+}
+
+.container-central-eventos h1 {
+    color: var(--cor-azul-escuro);
+    margin-bottom: 2vh;
+    font-size: 3.5vh;
+}
+
+.resumo-eventos {
+    font-style: italic;
+    color: #546e7a;
+    margin-bottom: 3vh;
+    font-size: 1.8vh;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #cfd8dc;
+}
+
+/* --- 4. LISTA DE EVENTOS (CARTÕES) --- */
+.lista-eventos {
+    display: grid;
+    gap: 18px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+    padding-bottom: 20px;
+}
+
+.evento-item {
+    background-color: #fcfcfc;
+    border: 1px solid #e0e0e0;
+    /* Linha lateral na cor do tipo (sem usar cores vibrantes/vermelhas aqui) */
+    border-left: 5px solid var(--cor-tipo, #90a4ae); 
+    border-radius: 10px; 
+    padding: 18px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.evento-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.evento-cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+/* Tipo de Evento (Destaque Principal) */
+.evento-cabecalho strong {
+    font-size: 2.0vh;
+    color: var(--cor-azul-escuro);
+    padding: 4px 10px;
+    border-radius: 5px;
+    background-color: #e8eaf6; /* Azul muito claro, quase branco */
+    font-weight: 600;
+}
+
+/* Data do Evento (Removendo o Vermelho, Usando um tom de Azul Escuro/Cinza) */
+.evento-data {
+    font-weight: 600;
+    color: var(--cor-texto-escuro); /* Cor neutra/escura para a data */
+    font-size: 1.6vh;
+    padding-top: 5px;
+}
+
+.evento-descricao {
+    font-size: 1.8vh;
+    color: var(--cor-texto-escuro);
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.evento-item input[type="checkbox"] {
+    margin-left: auto;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    align-self: flex-end;
+    /* Estilo para garantir que o checkbox se integre bem */
+    accent-color: var(--cor-azul-escuro);
+}
+
+/* --- 5. CORES POR TIPO DE EVENTO (Paleta Neutra/Azulada) --- */
+/* Mantendo a estrutura, mas usando tons de azul, cinza e verde para não ser "perigoso" */
+.tipo-prova { --cor-tipo: #1e88e5; }      /* Azul Médio */
+.tipo-trabalho { --cor-tipo: #66bb6a; }    /* Verde Suave */
+.tipo-reuniao { --cor-tipo: #7e57c2; }     /* Roxo Suave */
+.tipo-lembrete { --cor-tipo: #ffb300; }    /* Âmbar (para destaque, mas não perigo) */
+.tipo-evento { --cor-tipo: #90a4ae; }      /* Cinza Azulado (Default) */
+
+
+/* --- 6. FILTROS E AÇÕES --- */
+.filtros {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding-top: 20px;
+    margin-top: 10px;
+    border-top: 1px solid #cfd8dc;
+}
+
+.filtros label {
+    font-weight: 600;
+    color: var(--cor-texto-escuro);
+    font-size: 1.8vh;
+}
+
+.filtros select {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #cfd8dc;
+    cursor: pointer;
+    background-color: #ffffff;
+    font-size: 1.8vh;
+    color: var(--cor-texto-escuro);
+}
+
+/* Botão de Remover Selecionados (Substituindo o Vermelho Perigo) */
+.btn-perigo {
+    background-color: #616161; /* Cinza Escuro Neutro */
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.btn-perigo:hover {
+    background-color: #424242; /* Cinza mais escuro no hover */
+}

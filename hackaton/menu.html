@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diário Inteligente - Menu</title>
+    <link rel="stylesheet" href="css/menu.css">
+</head>
+<body id="tela-menu">
+    
+    <header class="cabecalho-superior">
+        <div class="nome-sistema">Diário inteligente</div>
+        <nav class="menu-principal">
+            <a href="menu.html">Início</a> | 
+            <a href="calendario.html">Calendário</a> | 
+            <a href="perfil.html">Perfil</a> | 
+            <a href="eventos.html">Eventos</a>
+        </nav>
+    </header>
+
+    <main class="conteudo-principal">
+        <h1 class="bem-vindo">Bem-vindo!</h1>
+        
+        <section class="area-ia">
+            <h2 class="titulo-ia">🤖 Organizador Inteligente (IA)</h2>
+            
+            <div id="historico-eventos" class="historico-eventos">
+                </div>
+
+            <div class="comandos-rapidos">
+                <span>Comandos Rápidos:</span>
+                <span>✅ Adicionar [evento] dia [dd/mm]</span>
+                <span>🗓️ Mostrar agenda</span>
+                <span>➖ Remover [ID]</span>
+                <span>❓ ajuda</span>
+            </div>
+            
+            <div class="input-ia-container">
+                <input type="text" id="input-comando-ia" placeholder="Digite seu comando aqui..." required>
+                <button id="btn-enviar-comando">Enviar</button>
+            </div>
+        </section>
+        
+    </main>
+
+    <footer class="rodape-inferior">
+        <span class="informacao-institucional">
+            | Instituto Nacional de Tecnologia (INT) |
+        </span>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Diário Inteligente</title>
+    <link rel="stylesheet" href="css/style.css"> 
+</head>
+<body id="tela-cadastro">
+    
+    <div class="area-imagem">
+        <img src="cerebro-digital.jpg" alt="Conexão humano e robô">
+    </div>
+
+    <div class="area-formulario">
+        
+        <h1 class="titulo-formulario">CADASTRE-SE</h1>
+
+        <div class="icones-sociais">
+            <i class="icone google">G</i>
+            <i class="icone facebook">f</i>
+            <i class="icone linkedin">in</i>
+        </div>
+
+        <form id="form-cadastro" class="formulario-cadastro">
+
+            <div class="grupo-input">
+                <label>Nome</label>
+                <input type="text" id="campo-nome" placeholder="Digite seu nome">
+            </div>
+
+            <div class="grupo-input">
+                <label>E-mail</label>
+                <input type="email" id="campo-email" placeholder="Digite seu e-mail">
+            </div>
+
+            <div class="grupo-input">
+                <label>Telefone</label>
+                <input type="text" id="campo-telefone" placeholder="Digite seu telefone">
+            </div>
+
+            <div class="linha">
+                <div class="grupo-input metade">
+                    <label>Senha</label>
+                    <input type="password" id="campo-senha" placeholder="Digite a senha">
+                </div>
+
+                <div class="grupo-input metade">
+                    <label>Confirmar Senha</label>
+                    <input type="password" id="campo-confirma-senha" placeholder="Confirme a senha">
+                </div>
+            </div>
+
+            <div class="termos">
+                <input type="checkbox" id="aceito-termos">
+                <span>Estou de acordo com os Termos de Uso.</span>
+            </div>
+
+            <button class="btn-enviar">CADASTRAR</button>
+
+            <a href="login.html" class="link-login">Já possui conta?</a>
+
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

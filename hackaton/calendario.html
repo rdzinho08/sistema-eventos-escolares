@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diário Inteligente - Calendário</title>
+    <link rel="stylesheet" href="css/calendario.css">
+    </head>
+<body id="tela-calendario">
+    
+    <header class="cabecalho-superior">
+        <div class="nome-sistema">Diário inteligente</div>
+        <nav class="menu-principal">
+            <a href="menu.html">Início</a> | 
+            <a href="#">Calendário</a> | 
+            <a href="perfil.html">Perfil</a> | 
+            <a href="eventos.html">Eventos</a>
+        </nav>
+    </header>
+
+    <main class="conteudo-principal-calendario">
+        <div class="container-calendario">
+            
+            <header class="calendario-cabecalho">
+                <button id="btn-anterior">◀</button>
+                <h2 id="mes-ano">Mês, Ano</h2>
+                <button id="btn-proximo">▶</button>
+            </header>
+            
+            <div class="dias-da-semana">
+                <span>Dom</span><span>Seg</span><span>Ter</span><span>Qua</span><span>Qui</span><span>Sex</span><span>Sáb</span>
+            </div>
+            
+            <div id="grid-dias" class="grid-dias">
+                </div>
+            
+            <div id="detalhes-evento" class="detalhes-evento">
+                <h3>Detalhes dos Eventos:</h3>
+                <p id="info-detalhe">Clique em um dia com marcador vermelho para ver os eventos.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="rodape-inferior">
+        <span class="informacao-institucional">
+            | Instituto Nacional de Tecnologia (INT) |
+        </span>
+    </footer>
+
+    <script src="calendario.js"></script>
+</body>
+</html>
